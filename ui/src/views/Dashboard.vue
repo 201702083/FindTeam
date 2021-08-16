@@ -1,0 +1,87 @@
+<template>
+  <b-container fluid>
+    <b-alert show v-show="error" variant="danger">
+      {{ error }}
+    </b-alert>
+
+    <b-row>
+      <!-- Left column -->
+      <b-col sm="12" md="6">
+        <b-row>
+
+          <b-col sm="12" class="mb-4">
+            <b-card>
+              <h5>이용량</h5>
+            </b-card>
+          </b-col>
+
+          <b-col sm="12" class="mb-4">
+            <b-card>
+              <h5>진행중인 프로젝트</h5>
+            </b-card>
+          </b-col>
+
+        </b-row>
+      </b-col>
+      <!-- Right column -->
+      <b-col sm="12" md="6">
+        <b-row>
+
+          <b-col sm="12" md="6">
+            <b-card class="h-100">
+              <h5>상태</h5>
+            </b-card>
+          </b-col>
+          <b-col sm="12" md="6">
+            <b-card class="h-100">
+              <h5>모집중인 공고</h5>
+            </b-card>
+          </b-col>
+
+          <b-col sm="12" class="mt-4">
+            <b-card>
+              <h5>최근 올라온 글</h5>
+            </b-card>
+          </b-col>
+
+        </b-row>
+      </b-col>
+    </b-row>
+
+  </b-container>
+</template>
+
+<script>
+
+  export default {
+    data() {
+      return {
+        error: null,
+      }
+    },
+    components: {
+
+    },
+    computed: {
+    },
+    methods: {
+      onError(error) {
+        this.error = error;
+      },
+    },
+    created() {
+    },
+  }
+</script>
+
+<style>
+.chart-container {
+  height: 15em;
+}
+
+.chart-fill {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+</style>
