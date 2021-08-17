@@ -7,7 +7,7 @@
 <script>
 export default {
   created(){
-    this.$router.push('/home/dashboard')
+    this.$router.push('/home/status')
   }
 }
 </script>

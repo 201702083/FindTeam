@@ -1,28 +1,37 @@
 <template>
   <div class="home">
-      <b-navbar toggleable="lg" type="dark" variant="primary">
-      <b-navbar-brand href="/ui/view">KangaLock</b-navbar-brand>
+      <b-navbar toggleable="lg" type="dark" variant="primary" >
+        <div class="d-flex justify-content-between">
 
-      <!-- right aligned contents from here -->
-      <b-navbar-nav class="ml-auto">
-      </b-navbar-nav>
-    </b-navbar>
+          <b-navbar-brand href="/ui/view">FindTeam</b-navbar-brand>
+          <b-button variant="light" class="float-right">Login</b-button>
+        <!-- right aligned contents from here -->
+        <b-navbar-nav class="ml-auto">
+        </b-navbar-nav>
+        </div>
+      </b-navbar>
     <b-container fluid id="home-container">
       <b-row>
-        <b-col sm="2">
-          <b-list-group>
-            <b-list-group-item><router-link class="text-reset home-nav" to="/home/dashboard">Dashboard</router-link></b-list-group-item>
-            <b-list-group-item><router-link class="text-reset home-nav" to="/home/store">Store</router-link></b-list-group-item>
-            <b-list-group-item><router-link class="text-reset home-nav" to="/home/history">History</router-link></b-list-group-item>
-            <b-list-group-item><router-link class="text-reset home-nav" to="/home/mypage">Mypage</router-link></b-list-group-item>
-          </b-list-group>
-        </b-col>
+        
 
         <b-col>
           <router-view/>
         </b-col>
       </b-row>
+      <b-row>
+        <b-col class="fixed-bottom">
+          <b-list-group class="">
+            <div class="d-flex">
+              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/status">Status</router-link></b-list-group-item></b-col>
+              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/store">Store</router-link></b-list-group-item></b-col>
+              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/history">History</router-link></b-list-group-item></b-col>
+              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/mypage">Mypage</router-link></b-list-group-item></b-col>
+            </div>
+          </b-list-group>
+        </b-col>
+      </b-row>
     </b-container>
+
   </div>
 </template>
 

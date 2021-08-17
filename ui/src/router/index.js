@@ -1,20 +1,20 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Sign from "../views/Sign.vue";
+import SignIn from "../views/SignIn.vue";
 import Store from "../views/Store.vue";
 import Mypage from "../views/Mypage.vue";
 import Histroy from "../views/History.vue";
 import Orderlist from "../views/Orderlist.vue";
 import Index from "../views/Index.vue"
-import Dashboard from "../views/Dashboard.vue";
+import Status from "../views/Status.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/sign', name: 'Sign', component: Sign,},
+  { path: '/signin', name: 'SignIn', component: SignIn,},
   { path: '/home', name: 'Home', component: Home,
     children:[
-      { path: 'dashboard', name: 'Dashboard', component: Dashboard },
+      { path: 'status', name: 'Status', component: Status },
       { path: 'store', name: 'Store', component: Store },
       { path: 'mypage', name: 'Mypage', component: Mypage },
       { path: 'history', name: 'Histroy', component: Histroy },
