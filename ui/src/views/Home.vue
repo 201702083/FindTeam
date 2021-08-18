@@ -18,13 +18,13 @@
           <router-view/>
         </b-col>
       </b-row>
-      <b-row>
+      <b-row >
         <b-col class="fixed-bottom">
           <b-list-group class="">
             <div class="d-flex">
-              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/status">Status</router-link></b-list-group-item></b-col>
-              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/store">Store</router-link></b-list-group-item></b-col>
-              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/history">History</router-link></b-list-group-item></b-col>
+              <b-col><b-list-group-item><router-link  class="text-reset home-nav" to="/home/status">Status</router-link></b-list-group-item></b-col>
+              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/team">Team</router-link></b-list-group-item></b-col>
+              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/event">Event</router-link></b-list-group-item></b-col>
               <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/mypage">Mypage</router-link></b-list-group-item></b-col>
             </div>
           </b-list-group>
@@ -44,3 +44,7 @@ export default {
   },
 };
 </script>
+<style>
+.home-nav{ text-decoration: none; }
+
+</style>
