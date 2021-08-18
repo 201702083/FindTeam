@@ -1,8 +1,7 @@
 <template>
   <div class="mb-5">
     <b-card class="mt-3 mb-3">
-
-      <b-row>
+      <b-row class="">
         <b-col>
           <h5>Search Projects</h5>
         </b-col>
@@ -18,9 +17,10 @@
 
       <b-collapse id="advanced-search" v-model="option_hide">
 
-        <b-form-group label="Scale" class=""
+        <b-form-group label="Scale" 
                       label-cols-sm="2" content-cols="12">
-          <b-form-select v-model="scale" :options="scale_options"/>
+          <b-form-select v-model="scale" :options="scale_options"></b-form-select>
+
         </b-form-group>
         <b-form-group label="Category"
                       label-cols-sm="2" content-cols="">
@@ -58,14 +58,18 @@
       <b-card border-variant="dark" :header="project.title" class="text-center m-2">
         <b-card-text>{{project.description}}</b-card-text>
         <b-col class="right-col" @click="toggleDetail(i)">
+        <div class="right"> 
+         <span v-for="i in project.need - project.now" :key="i+'a'"><b-icon-person></b-icon-person></span>
+         <span v-for="i in project.now" :key="i+'z'"><b-icon-person-check-fill></b-icon-person-check-fill></span>         
+        </div>
+
           <span v-show="detail_hide">
             hide <b-icon-chevron-up/>
           </span>
           <span v-show="!detail_hide">
-            show <b-icon-chevron-down/>
+            detail <b-icon-chevron-down/>
           </span>
         </b-col>
-        <b-collapse></b-collapse>
         <b-button variant="outline-primary" size="sm">신청</b-button>
       </b-card>
     </div>
@@ -128,17 +132,27 @@ export default {
       teams:[]
     }
   },
+  methods:{
+    toggleDetail(){
+    }
+  },
   created(){
     let vm = this;
     //mock teams data
     vm.teams = [
-        {title:"디자인 웹 포트폴리오",description:"간단한 졸작용으로 하실 분 구합니다."},
-        {title:"사회문제 캡스톤",description:"2학기 사회문제 캡스톤 팀원 구합니다."},
-        {title:"창업 경진 대회",description:"교내 규모 창업 경민 대회 PM / 개발자 모집"},
-        {title:"콜라톤",description:"콜라톤 디자이너 급구"},
-        {title:"딥러닝 졸프",description:"데브옵스 / 딥러닝 파트 구합니다"},
+        {title:"디자인 웹 포트폴리오",description:"간단한 졸작용으로 하실 분 구합니다.",need:5,now:3},
+        {title:"사회문제 캡스톤",description:"2학기 사회문제 캡스톤 팀원 구합니다.",need:3,now:2},
+        {title:"창업 경진 대회",description:"교내 규모 창업 경진 대회 PM / 개발자 모집",need:8,now:5},
+        {title:"콜라톤",description:"콜라톤 디자이너 급구",need:3,now:1},
+        {title:"딥러닝 졸프",description:"데브옵스 / 딥러닝 파트 구합니다",need:5,now:3},
         
       ]
   }
 }
 </script>
+
+<style>
+.right{
+  text-align: right;
+}
+</style>
