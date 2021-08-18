@@ -4,7 +4,7 @@
 
       <b-row>
         <b-col>
-          <h5>Search objects</h5>
+          <h5>Search Projects</h5>
         </b-col>
         <b-col class="right-col" @click="option_hide = !option_hide">
           <span v-show="option_hide">
