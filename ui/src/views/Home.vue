@@ -1,15 +1,10 @@
 <template>
   <div class="home">
-      <b-navbar toggleable="lg" type="dark" variant="primary" >
-        <div class="d-flex justify-content-between">
+    <nav class="navbar navbar-dark bg-primary justify-content-between">
+      <a class="navbar-brand m-1" href="/ui/view">FindTeam</a>
+      <b-button variant="light" class="float-right m-1" @click="toSign">Login</b-button>
+    </nav>
 
-          <b-navbar-brand href="/ui/view">FindTeam</b-navbar-brand>
-          <b-button variant="light" class="float-right" @click="toSign">Login</b-button>
-        <!-- right aligned contents from here -->
-        <b-navbar-nav class="ml-auto">
-        </b-navbar-nav>
-        </div>
-      </b-navbar>
     <b-container fluid id="home-container">
       <b-row>
         
@@ -24,7 +19,7 @@
             <div class="d-flex">
               <b-col><b-list-group-item><router-link  class="text-reset home-nav" to="/home/status">Status</router-link></b-list-group-item></b-col>
               <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/team">Team</router-link></b-list-group-item></b-col>
-              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/event">Event</router-link></b-list-group-item></b-col>
+              <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/schedule">Schedule</router-link></b-list-group-item></b-col>
               <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/mypage">Mypage</router-link></b-list-group-item></b-col>
             </div>
           </b-list-group>

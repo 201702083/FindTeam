@@ -7,7 +7,7 @@ import SignUp from "../views/SignUp.vue";
 
 import Team from "../views/Team.vue";
 import Mypage from "../views/Mypage.vue";
-import Event from "../views/Event.vue";
+import Schedule from "../views/Schedule.vue";
 import Orderlist from "../views/Orderlist.vue";
 import Index from "../views/Index.vue"
 import Status from "../views/Status.vue";
@@ -22,7 +22,7 @@ const routes = [
       { path: 'status', name: 'Status', component: Status },
       { path: 'team', name: 'Team', component: Team },
       { path: 'mypage', name: 'Mypage', component: Mypage },
-      { path: 'event', name: 'Event', component: Event },
+      { path: 'schedule', name: 'Schedule', component: Schedule },
       { path: 'order', name: 'Orderlist', component: Orderlist },
 
       ],
