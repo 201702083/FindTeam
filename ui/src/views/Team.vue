@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-5">
     <b-card class="mt-3 mb-3">
 
       <b-row>
@@ -42,7 +42,7 @@
 
       <b-row class="">
         <b-col class="right-col">
-          <b-button variant="primary" size="sm" @click="press_search()">
+          <b-button variant="primary" size="sm" >
             <b-icon-search/> Search
           </b-button>
         </b-col>
@@ -54,8 +54,12 @@
     </b-card>
 
     
-    <h1>Project information</h1>
-    <h1>Make or Apply</h1>
+    <div v-for="project in teams" :key="project">
+      <b-card border-variant="dark" :header="project.title" class="text-center m-2">
+        <b-card-text>{{project.description}}</b-card-text>
+        <b-button variant="outline-primary" size="sm">신청</b-button>
+      </b-card>
+    </div>
   </div>
 </template>
 
@@ -110,7 +114,20 @@ export default {
       category_options:category_options,
       job_options:job_options,
       term_options:term_options,
+      teams:[]
     }
+  },
+  created(){
+    let vm = this;
+    //mock teams data
+    vm.teams = [
+        {title:"디자인 웹 포트폴리오",description:"간단한 졸작용으로 하실 분 구합니다."},
+        {title:"사회문제 캡스톤",description:"2학기 사회문제 캡스톤 팀원 구합니다."},
+        {title:"창업 경진 대회",description:"교내 규모 창업 경민 대회 PM / 개발자 모집"},
+        {title:"콜라톤",description:"콜라톤 디자이너 급구"},
+        {title:"딥러닝 졸프",description:"데브옵스 / 딥러닝 파트 구합니다"},
+        
+      ]
   }
 }
 </script>
