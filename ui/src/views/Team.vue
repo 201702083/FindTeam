@@ -18,7 +18,7 @@
 
       <b-collapse id="advanced-search" v-model="option_hide">
 
-      <b-form-group label="Scale"
+      <b-form-group label="Scale" class=""
                     label-cols-sm="2" content-cols="12">
         <b-form-select v-model="scale" :options="scale_options"/>
       </b-form-group>
@@ -27,8 +27,8 @@
         <b-form-select v-model="category" :options="category_options"/>
       </b-form-group>
       <b-form-group label="Name"
-                    label-cols-sm="2" content-cols="3">
-        <b-form-input v-model="name"/>
+                    label-cols-sm="2" content-cols="">
+        <b-form-input v-model="name" class="m-2"/>
         <b-form-checkbox v-model="name_exact">Exact match</b-form-checkbox>
       </b-form-group>
       <b-form-group label="Job"
