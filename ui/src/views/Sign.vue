@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import {Got_Cookie} from "./Home.vue";
+Got_Cookie;
 export default {
   setup() {
     
@@ -23,6 +25,7 @@ export default {
       event.preventDefault();
       // get 후 response 성공하면 쿠키 생성 후 home/status로
       this.$router.push('/home/status')
+      this.Got_Cookie = true;
     }
   }
 }

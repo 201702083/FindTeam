@@ -2,7 +2,9 @@
   <div class="home">
     <nav class="navbar navbar-dark bg-primary justify-content-between">
       <a class="navbar-brand m-1" href="/ui/view">FindTeam</a>
-      <b-button variant="light" class="float-right m-1" @click="toSign">Login</b-button>
+      <b-button variant="light" class="float-right m-1" @click="toSign" v-if="Got_Cookie">Login</b-button>
+      <b-button variant="light" class="float-right m-1" @click="toSign" v-else>Logout</b-button>
+
     </nav>
 
     <b-container fluid id="home-container">
@@ -35,11 +37,17 @@
 
 export default {
   name: "Home",
-  components: {
+  data(){
+    return{
+      Got_Cookie:true,
+    }
   },
   methods:{
     toSign(){
-      this.$router.push('/home/sign')
+      if(this.$route.path !== '/home/sign')  this.$router.push('/home/sign')
+    },
+    logout(){
+      this.Got_Cookie = false;
     }
   }
 };

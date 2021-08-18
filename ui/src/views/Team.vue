@@ -18,35 +18,35 @@
 
       <b-collapse id="advanced-search" v-model="option_hide">
 
-      <b-form-group label="Scale" class=""
-                    label-cols-sm="2" content-cols="12">
-        <b-form-select v-model="scale" :options="scale_options"/>
-      </b-form-group>
-      <b-form-group label="Category"
-                    label-cols-sm="2" content-cols="">
-        <b-form-select v-model="category" :options="category_options"/>
-      </b-form-group>
-      <b-form-group label="Name"
-                    label-cols-sm="2" content-cols="">
-        <b-form-input v-model="name" class="m-2"/>
-        <b-form-checkbox v-model="name_exact">Exact match</b-form-checkbox>
-      </b-form-group>
-      <b-form-group label="Job"
-                    label-cols-sm="2" content-cols="">
-        <b-form-select v-model="job" :options="job_options"/>
-      </b-form-group>
-      <b-form-group label="Term"
-                    label-cols-sm="2" content-cols="">
-        <b-form-select v-model="term" :options="term_options"/>
-      </b-form-group>
+        <b-form-group label="Scale" class=""
+                      label-cols-sm="2" content-cols="12">
+          <b-form-select v-model="scale" :options="scale_options"/>
+        </b-form-group>
+        <b-form-group label="Category"
+                      label-cols-sm="2" content-cols="">
+          <b-form-select v-model="category" :options="category_options"/>
+        </b-form-group>
+        <b-form-group label="Name"
+                      label-cols-sm="2" content-cols="">
+          <b-form-input v-model="name" class="m-2"/>
+          <b-form-checkbox v-model="name_exact">Exact match</b-form-checkbox>
+        </b-form-group>
+        <b-form-group label="Job"
+                      label-cols-sm="2" content-cols="">
+          <b-form-select v-model="job" :options="job_options"/>
+        </b-form-group>
+        <b-form-group label="Term"
+                      label-cols-sm="2" content-cols="">
+          <b-form-select v-model="term" :options="term_options"/>
+        </b-form-group>
 
-      <b-row class="">
-        <b-col class="right-col">
-          <b-button variant="primary" size="sm" >
-            <b-icon-search/> Search
-          </b-button>
-        </b-col>
-      </b-row>
+        <b-row class="">
+          <b-col class="right-col">
+            <b-button variant="primary" size="sm" >
+              <b-icon-search/> Search
+            </b-button>
+          </b-col>
+        </b-row>
 
       </b-collapse>
 
@@ -54,9 +54,18 @@
     </b-card>
 
     
-    <div v-for="project in teams" :key="project">
+    <div v-for="(project,i) in teams" :key="i">
       <b-card border-variant="dark" :header="project.title" class="text-center m-2">
         <b-card-text>{{project.description}}</b-card-text>
+        <b-col class="right-col" @click="toggleDetail(i)">
+          <span v-show="detail_hide">
+            hide <b-icon-chevron-up/>
+          </span>
+          <span v-show="!detail_hide">
+            show <b-icon-chevron-down/>
+          </span>
+        </b-col>
+        <b-collapse></b-collapse>
         <b-button variant="outline-primary" size="sm">신청</b-button>
       </b-card>
     </div>
@@ -109,7 +118,9 @@ export default {
       job:"",
       term:"",
       name:"",
+      name_exact:"",
       option_hide:false,
+      detail_hide:false,
       scale_options:scale_options,
       category_options:category_options,
       job_options:job_options,
