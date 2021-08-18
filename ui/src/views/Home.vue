@@ -4,7 +4,7 @@
         <div class="d-flex justify-content-between">
 
           <b-navbar-brand href="/ui/view">FindTeam</b-navbar-brand>
-          <b-button variant="light" class="float-right">Login</b-button>
+          <b-button variant="light" class="float-right" @click="toSign">Login</b-button>
         <!-- right aligned contents from here -->
         <b-navbar-nav class="ml-auto">
         </b-navbar-nav>
@@ -42,6 +42,11 @@ export default {
   name: "Home",
   components: {
   },
+  methods:{
+    toSign(){
+      this.$router.push('/home/sign')
+    }
+  }
 };
 </script>
 <style>
