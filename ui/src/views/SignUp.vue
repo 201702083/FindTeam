@@ -43,7 +43,8 @@ export default {
   methods:{
     onSubmit(event){
       event.preventDefault();
-      // post 후 response 성공하면 /home으로
+      // post 후 response 성공하면 /home/sign 으로
+      this.$router.push('/home/sign')
       console.log(this.email , this.pwd, this.city, this.state)
     }
   }
