@@ -1,14 +1,20 @@
 <template>
-  <form @submit="onSubmit">
+  <form @submit="onSubmit" >
+   
     <div class="form-group mt-5">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control mt-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <input type="email" class="form-control mt-3" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
     </div>
     <div class="form-group mt-5">
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control mt-3" id="exampleInputPassword1" placeholder="Password">
     </div>
-    <button type="submit" class="btn btn-primary mt-5">Submit</button>
+    <button type="submit" class="btn btn-outline-primary m-5">Sign in</button>
+    <div>
+      <router-link style="text-decoration:none" class="m-3" to="/home/find">Find</router-link>
+      <router-link style="text-decoration:none" class="m-3" to="/home/signup">Sign Up</router-link>
+    </div>
+
   </form>
 </template>
 
@@ -30,3 +36,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+#sform{
+  text-align: center;
+}
+</style>

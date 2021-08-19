@@ -1,42 +1,56 @@
 <template>
   <div >
-    <h1>This is an sign page</h1>
     <form @submit="onSubmit">
       <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        <div class="form-group">
+          <label >Email</label>
+          <input v-model="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group ">
           <label for="inputPassword4">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+          <input v-model="pwd" type="password" class="form-control" id="inputPassword4" placeholder="Password">
         </div>
       </div>
       <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group ">
           <label for="inputCity">City</label>
-          <input type="text" class="form-control" id="inputCity">
+          <input v-model="city" type="text" class="form-control" id="inputCity">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group ">
           <label for="inputState">State</label>
-          <select id="inputState" class="form-control">
+          <select v-model="state" id="inputState" class="form-control">
             <option selected>Choose...</option>
             <option>...</option>
           </select>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Sign in</button>
+      <button type="submit" class="btn btn-outline-primary mt-3">Sign up</button>
     </form>
+  
   </div>
+  
 </template>
 <script>
 export default {
+  data(){
+    return{
+      email:"",
+      pwd:"",
+      city:"",
+      state:"...",
+    }
+  },
   methods:{
     onSubmit(event){
       event.preventDefault();
       // post 후 response 성공하면 /home으로
-      this.$router.push('/')
+      console.log(this.email , this.pwd, this.city, this.state)
     }
   }
 }
 </script>
+<style  scoped>
+.form-group{
+  margin-top: 10%;
+}
+</style>
