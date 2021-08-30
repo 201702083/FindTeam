@@ -19,7 +19,7 @@
         <b-col class="fixed-bottom">
           <b-list-group class="">
             <div class="d-flex">
-              <b-col><b-list-group-item><router-link  class="text-reset home-nav" to="/home/status">Status</router-link></b-list-group-item></b-col>
+              <b-col ><b-list-group-item><router-link  class="text-reset home-nav" to="/home/status">Status</router-link></b-list-group-item></b-col>
               <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/team">Team</router-link></b-list-group-item></b-col>
               <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/schedule">Schedule</router-link></b-list-group-item></b-col>
               <b-col><b-list-group-item><router-link class="text-reset home-nav" to="/home/mypage">Mypage</router-link></b-list-group-item></b-col>
@@ -53,6 +53,9 @@ export default {
 };
 </script>
 <style>
-.home-nav{ text-decoration: none; }
+col{
+  background-color: red;
+}
+.home-nav{ text-decoration: none;}
 
 </style>
