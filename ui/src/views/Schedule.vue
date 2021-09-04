@@ -1,6 +1,5 @@
 <template>
   <div >
-    <h1>Competition schedule will be shown</h1>
     <b-card v-for="(comp,i) in competitions" :key="i"
       :title="comp.title">
       <a :href="comp.link"><img src="../assets/logo.png"/></a>
