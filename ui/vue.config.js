@@ -1,3 +1,4 @@
 module.exports = {
-  publicPath: "/ui/view",
+  publicPath: "/FindTeam",
+  outputDir: 'docs'
 }
