@@ -1,11 +1,5 @@
-# 충남대학교 프로젝트 팀원 모집 웹서비스
+# Project Team Platform & AOS APP
 
-- FE - Vue
-- BE - Golang
-- DB - Maria
-
-# Android Application 
-
-- FE - Flutter
-- BE - Golang
+- FE - Vue / Flutter
+- BE - Gin, gorilla
 - DB - Maria
