@@ -7,7 +7,7 @@
 <script>
 export default {
   created(){
-    this.$router.push('/home/status')
+    this.$router.push('/home/Sign')
   }
 }
 </script>
