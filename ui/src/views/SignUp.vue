@@ -3,25 +3,22 @@
     <form @submit="onSubmit">
       <div class="form-row">
         <div class="form-group">
-          <label >Email</label>
-          <input v-model="email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          <label >ID</label>
+          <input v-model="id" type="id" class="form-control" id="inputEmail4" placeholder="ID">
         </div>
         <div class="form-group ">
           <label for="inputPassword4">Password</label>
-          <input v-model="pwd" type="password" class="form-control" id="inputPassword4" placeholder="Password">
+          <input v-model="pw" type="password" class="form-control" id="inputPassword4" placeholder="Password">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group ">
-          <label for="inputCity">City</label>
-          <input v-model="city" type="text" class="form-control" id="inputCity">
+          <label for="inputCity">Email</label>
+          <input v-model="email" type="text" class="form-control">
         </div>
         <div class="form-group ">
-          <label for="inputState">State</label>
-          <select v-model="state" id="inputState" class="form-control">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
+          <label for="inputState">UnivAuth</label>
+          <input v-model="univEmail" type="text" class="form-control">
         </div>
       </div>
       <button type="submit" class="btn btn-outline-primary mt-3">Sign up</button>
@@ -31,19 +28,30 @@
   
 </template>
 <script>
+import axios from 'axios';
 export default {
   data(){
     return{
-      email:"",
+      id:"",
       pwd:"",
-      city:"",
-      state:"...",
+      email:"",
+      univEmail:"",
+      univAuth:false,
     }
   },
   methods:{
     onSubmit(event){
       event.preventDefault();
       // post 후 response 성공하면 /home/sign 으로
+      var requestBody = {
+        id : this.id,
+        pw : this.pw,
+        email : this.email,
+        univAuth : this.univAuth
+      }
+      axios.post('/api/User/register', requestBody).then(res =>{
+        console.log(res)
+      })
       this.$router.push('/home/sign')
       console.log(this.email , this.pwd, this.city, this.state)
     }
