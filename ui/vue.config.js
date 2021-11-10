@@ -1,4 +1,12 @@
 module.exports = {
-  publicPath: "/FindTeam",
-  outputDir: 'docs'
+  devServer: {
+    proxy: {
+      '^/api': {
+
+        target: "http://localhost:4000",
+        changeOrigin: true,
+        logLevel: "debug"
+      }
+    }
+  }
 }
