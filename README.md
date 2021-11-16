@@ -1,4 +1,4 @@
-# Project Team Platform & AOS APP
+# Project team matching Platform & AOS APP
 
 - FE - Vue / Flutter
 - BE - Gin, gorilla
